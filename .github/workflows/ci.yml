@@ -34,6 +34,10 @@ jobs:
         run: |
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
+      - uses: actions/upload-artifacts@v4
+        with: 
+          name: remark-lint-report
+          path: remark-lint-reposrt.json
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
